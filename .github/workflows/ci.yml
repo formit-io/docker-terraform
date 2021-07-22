@@ -13,8 +13,8 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     env:
-      TERRAFORM_VER: 0.14.10
-      TERRAGRUNT_VER: 0.28.21
+      TERRAFORM_VER: 1.0.3
+      TERRAGRUNT_VER: 0.31.1
     steps:
       -
         name: Checkout
@@ -28,7 +28,7 @@ jobs:
       -
         name: Docker meta
         id: meta
-        uses: crazy-max/ghaction-docker-meta@v2
+        uses: docker/metadata-action@v3
         with:
           images: ghcr.io/formit-io/terraform
       -
